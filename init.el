@@ -65,27 +65,6 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Cocoa Emacs
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; CmdをMetaに割り当てる
-(setq ns-command-modifier (quote meta))
-
-;; メニューバーを隠す
-(tool-bar-mode -1)
-
-;; フルスクリーン表示
-(set-frame-parameter nil 'fullscreen 'fullboth)
-(defun my-mac-toggle-max-window ()
-  (interactive)
-  (if(frame-parameter nil 'fullscreen)
-      (set-frame-parameter nil 'fullscreen nil)
-    (set-frame-parameter nil 'fullscreen 'fullboth)))
-(global-set-key "\C-cm"'my-mac-toggle-max-window)
-
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Key bind
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
