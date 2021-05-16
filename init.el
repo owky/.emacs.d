@@ -50,6 +50,16 @@
     (split-window-horizontally))
   (other-window 1))
 
+;; タブ幅
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq default-tab-width 2)
+
+(add-hook 'js-mode-hook
+          (lambda ()
+            (make-local-variable 'js-indent-level)
+            (setq js-indent-level 2)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Appearance
