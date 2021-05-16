@@ -55,10 +55,14 @@
 (setq-default tab-width 2)
 (setq default-tab-width 2)
 
+;; JavaScript
 (add-hook 'js-mode-hook
           (lambda ()
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
+
+;; Ruby
+(setq ruby-insert-encoding-magic-comment nil)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -92,3 +96,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Mac
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(when (eq system-type 'darwin)
+  (setq ns-command-modifier (quote meta)))
