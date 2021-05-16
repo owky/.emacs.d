@@ -13,6 +13,7 @@
 (defvar installing-package-list
   '(
     sequential-command
+    web-mode
     ))
 
 ;; インストールしていないパッケージをインストール
@@ -61,6 +62,14 @@
             (make-local-variable 'js-indent-level)
             (setq js-indent-level 2)))
 
+;; web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(defun web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 4))
+(add-hook 'web-mode-hook 'web-mode-hook)
+
 ;; Ruby
 (setq ruby-insert-encoding-magic-comment nil)
 
@@ -84,18 +93,6 @@
 
 (global-set-key (kbd "C-h") 'delete-backward-char)
 (global-set-key (kbd "C-t") 'other-window-or-split)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(sequential-command)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Mac
